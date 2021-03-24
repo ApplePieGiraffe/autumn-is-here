@@ -1,0 +1,235 @@
+/* base */
+
+:root {
+    --color-beige: hsl(34, 32%, 85%);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* slide */
+
+.slide {
+    display: flex;
+    height: 100vh;
+}
+
+.text-wrapper {
+    width: 60%;
+    padding: 6rem 2rem 4rem;
+}
+
+.text-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 34rem;
+    margin: 0 auto;
+}
+
+/* social media links */
+
+.social-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.social-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: -2.75rem;
+    left: 0;
+    width: 100%;
+    height: 2rem;
+    background: white;
+}
+
+@keyframes slideInLink {
+    from {
+        transform: translateY(2.75rem);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: black;
+    font-size: 1.125rem;
+    text-decoration: none;
+    transform: translateY(2.75rem);
+}
+
+.social-link:nth-child(1) {
+    animation: slideInLink 1.2s cubic-bezier(0.22, 1, 0.36, 1) 1.5s forwards;
+}
+
+.social-link:nth-child(2) {
+    animation: slideInLink 1.2s cubic-bezier(0.22, 1, 0.36, 1) 2s forwards;
+}
+
+.social-link:nth-child(3) {
+    animation: slideInLink 1.2s cubic-bezier(0.22, 1, 0.36, 1) 2.5s forwards;
+}
+
+.social-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    background: var(--color-beige);
+}
+
+/* body */
+
+.body-wrapper {
+    padding: 6rem 0;
+}
+
+.number-wrapper {
+    position: relative;
+    margin-bottom: .5rem;
+}
+
+.number-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: -2.5rem;
+    left: 0;
+    width: 100%;
+    height: 3rem;
+    background: white;
+}
+
+@keyframes slideInNumber {
+    from {
+        transform: translateY(2.75rem);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.number {
+    font-family: 'Playfair Display', sans-serif;
+    color: var(--color-beige);
+    font-size: 2.75rem;
+    transform: translateY(2.75rem);
+    animation: slideInLink 1.5s cubic-bezier(0.22, 1, 0.36, 1) .5s forwards;
+}
+
+.heading-wrapper {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.heading-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: -2.875rem;
+    left: 0;
+    width: 100%;
+    height: 3.5rem;
+    background: white;
+}
+
+@keyframes slideInHeader {
+    from {
+        transform: translateY(3.5rem);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.heading {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 3.25rem;
+    transform: translateY(3.5rem);
+    animation: slideInLink 1.5s cubic-bezier(0.22, 1, 0.36, 1) .75s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+.paragaph {
+    position: relative;
+    opacity: 0;
+    line-height: 1.6;
+    transform: translateY(1rem);
+    animation: fadeIn 2s cubic-bezier(0.22, 1, 0.36, 1) 1s forwards;
+}
+
+/* image */
+
+@keyframes slideInWrapper {
+    from {
+        clip-path: inset(100% 0 0);
+    }
+
+    to {
+        clip-path: inset(0);
+    }
+}
+
+@keyframes slideInImg {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+        clip-path: inset(50% 0 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0);
+        clip-path: inset(0);
+    }
+}
+
+.img-wrapper {
+    width: 40%;
+    height: 100%;
+    min-width: 32rem;
+    padding: 2rem;
+    background-color: var(--color-beige);
+    animation: slideInWrapper 1.2s cubic-bezier(0.22, 1, 0.36, 1) .5s forwards;
+    clip-path: inset(100% 0 0);
+    overflow: hidden;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: slideInImg 1.2s cubic-bezier(0.22, 1, 0.36, 1) .55s forwards;
+    clip-path: inset(100% 0 0);
+    opacity: 0;
+}
